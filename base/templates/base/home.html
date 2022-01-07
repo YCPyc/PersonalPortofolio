@@ -1,0 +1,98 @@
+{% extends 'base/main.html' %}
+{%load static%}
+{% block content %}
+        <!-- cover section -->
+        <section class="hero">
+            <div class="hero--container">
+                <div class="hero--content--intro">
+                    <img id ="profile_pic" src="{% static 'images/YCPhoto.jpeg'%}">
+                    <div class="hero--content--intro--name">
+                        <div class="hero--content--intro--name--chinese"><p>class = </p><h1 id="hero" class="name">潘彦成</h1></div>
+                        <h1 id="hero" class="name">YC Pan </h1>
+                    </div>
+                </div>
+                <div class="hero--content--bio">
+                    <h1 id="hero" class="bio"> Computer Science Student @ UVa </h1>
+                    <h2 id="hero" class="motto">"Challenge the Status Quo"</h2>
+                </div>
+            </div>
+        </section>
+
+        <!-- Project Section -->
+        <section class = "project">
+            <h3>My Projects</h3>
+            <h5>Projects that make my journey worthwhile</h5>
+            <div class="projects--wrapper">
+                {% for project in projects %}
+                <a href="{% url 'project' project.id %}">
+                <div class="project--column">
+                    <img id ="project_pic" src="{{ project.thumbnail.url }}">
+                    <div class="project--body">
+                        <h5>{{ project.title }}</h5>
+                    </div> 
+                </div>
+                </a>
+                {% empty %}
+                    <h3>No Project in the DB...</h3>
+                {% endfor %}
+            </div>
+        </section>
+
+        <!-- about me section -->
+        <section class="about">
+            <div class="skill--container">
+                <div class="intro--wrapper">
+                    <h3>About Me</h3>
+                    <div class="aboutMe-wrapper">
+                        <p>Throughout my undergraduate study, I have familiarized myself with Python, Java, Django, HTML5 and CSS. 
+                            My diverse internship experiences endowed me with strong communication skills. As a software engineer intern at Lufax, 
+                            basic features such as comment sections. Also, I worked on frontend development to provide new functionalities for company's loan trading platform. While interning at Hirebeat, I renovated company's website to provide  
+                            developed the website from scratch including microsites, applications, forms using React, Vue and SQL, and maintained the website and optimized the efficiency such as 
+                            page loading speed using cache. Moreover, my project experience has helped me to fill the gap between knowledge and application.</p>
+        
+                        <p>I am now practicing LeetCode questions and willing to improve myself by networking with more professionals. 
+                            I can be reached either through this profile, by phone at <a href="5164744488">(516) 474-4488</a>, or by email at <a href="ycyanchengpan@gmail.com">ycyanchengpan@gmail.com</a>. 
+                            Please check the additional qualifications below. </p>
+                    </div>         
+                </div>
+
+                <div class="skill--other">
+                    {% for skill in skills %}
+                    <div class="skill--other--tag">
+                        <span>{{skill.title}}</span>
+                    </div>
+                    {% endfor %}
+                </div>
+
+                <div class="education--container">
+                    <div class="courses--container">
+                    </div>
+
+                    <div>
+                        
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+           
+
+        <section class="contact">
+            <div class="container">
+               
+                <form class="contact--form" method="POST" >
+                    <h3>Contact Me</h3>
+                    {% csrf_token %}
+                    {% for field in form %}
+                    <div class= "mb-3">
+                        <label class="form-label">{{field.label}}</label>
+                        {{field}}
+                    </div>
+                    {% endfor %}
+                    <input class="btn btn-primary" type = "submit" value="submit">
+                </form>
+            </div>
+        </section>
+        {% endblock content %}

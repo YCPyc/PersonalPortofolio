@@ -1,0 +1,193 @@
+body{
+    margin: 0%;
+    background-color: #E5E5E5;
+}
+.container{
+    max-width: 3000px;
+    padding-left: 15em;
+    padding-right: 15em;
+    padding-top: 2em;
+    min-height:50rem;
+    margin: 0 auto;
+}
+
+.about{
+    background-color: white;
+    max-width: 3000px;
+    padding-left: 6em;
+    padding-right: 6em;
+    padding-top: 2em;
+    padding-bottom: 10px;
+
+}
+
+.hero{
+    background-color:#1F2428;
+    min-height:67vh
+}
+
+/* intro section */
+.navigation-bar{
+    background-color:#2b3c49;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    gap:5em;
+    padding-top: 0.3em;
+}
+
+.nav-link{
+    color: white;
+    text-decoration: none;
+}
+
+
+#profile_pic{
+    height: 200px;
+    width: 230px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.hero--container{
+    width: 800px;
+    margin: 0 auto;
+    justify-content: center;
+    
+
+}
+
+.hero--content--intro{
+    padding:4em;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    justify-content: center;
+}
+
+.hero--content--intro--name{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    font-weight: 700;
+    color:white
+}
+
+.hero--content--intro--name--chinese{
+    display: flex;
+}
+
+.hero--content--intro--name h1{
+    font-weight: 700;
+}
+
+.hero--content--intro--name p{
+    padding-top: 3em;
+}
+
+.hero--content--bio{
+    text-align: center;
+}
+
+
+
+#hero{
+    color:white
+}
+
+#hero.name{
+   font-size: 62px;
+   letter-spacing: .5em;
+
+}
+
+#hero.bio {
+ }
+
+#hero.motto {
+    margin-top: 20px;
+    font-size: 62px;
+    font-style: italic;
+    font-family: Inter;
+    font-weight: normal;
+    font-size: 32px;    
+ 
+ }
+
+ /* project section */
+
+.projects--wrapper{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap:2em;
+    margin-top: 2rem;
+    min-height: 18.75rem;
+
+ }
+
+.project--column{
+    height:18.75rem;
+ }
+
+
+.project--body{
+     background-color: white;
+     text-align: center;
+     width: 18.75rem;
+     height: 10em;
+     position:relative
+ }
+
+.project--body h4{
+
+ }
+
+ #project_pic{
+    height: 200px;
+    width: 300px;
+    object-fit: cover;
+}
+
+.skill--container{
+    width: 600px;
+    margin: 0 auto;
+}
+
+
+.skill--container h3{
+    padding-top:0.5em;
+    /* margin sometimes doesn't work on block level element */
+}
+
+.intro--wrapper{
+    margin-top: 15px;
+    padding:0.3125rem;
+}
+
+.skill--other{
+    display:flex;
+    gap:0.5em;
+}
+
+.skill--other--tag{
+    padding-left: 0.5em;
+    font-size: small;
+    background-color: #c4e7f2;
+    width:fit-content;
+    border-radius: 1.25rem;
+    padding:0.17rem 0.5rem;
+    
+}
+
+.project--image{
+    max-width:800px;
+}
+
+@media (max-width:900px){
+    .hero--content--intro{
+        flex-direction: column;
+    }
+    .projects--wrapper{
+        grid-template-columns: 1fr;
+    }
+}

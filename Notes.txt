@@ -1,0 +1,33 @@
+Tutorial: https://www.youtube.com/watch?v=qNv7huHTXk0&list=PLBYinPS3p_ArY7ek39zMmEUJRhmgXV7As&index=9&t=13571s
+
+12/27 4:10:27
+to create a new page
+1. have the html template
+2. bind the template to a function in views.py
+3. link an url to the function in views.py in urls.py
+
+create a form
+1.create a forms.py to initiate the form model and use meta to change the behavior of the model fields
+2.pass in the form object to html page in views.py 
+3.inside the html page, remember to render form object and have submit button and have enctype for submission and have method = POST
+4.for styling, in html render the field one div at a time so that you can apply class for bootstrap to take effects, and use super class in forms.py to do the same thing
+
+
+create a edit page 
+1. "a" tag in the project page and remember to pass pk to identify the specific project
+2. go to views.py to create the function (this one is similar to the addproject one but just need remember the default form values should be from that specific project)
+3. urls.py add the path that corresponds to the view function and the url that in the "a" link
+
+12/28 Add Rich Text Editor 4:45
+Resource:https://django-ckeditor.readthedocs.io/en/latest/#installation
+1. Install rich text editor based on the doucmentation
+2. put the function inside the models.py to replace textfield
+3. make sure the edited text is rendered correctly using safe keyword to avoid html escaping
+4. to make the editor valid to use in project_form.html using form.media
+*More on form.media: https://docs.djangoproject.com/en/4.0/topics/forms/media/#media-objects
+
+01/06 Sending Message
+recap on how to add a new page(html/views/url) and how to add a link 
+how to use bootstrap on table tag
+if we are going to display data on the page, we need to have a new database in models.py
+In views.py, you can order data by .order_by()
